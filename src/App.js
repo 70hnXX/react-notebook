@@ -4,10 +4,10 @@ import DataBind from './demos/DataBind'
 
 class App extends Component {
     render() {
-        return ( 
-          <div >
-            <DataBind/>
-          </div>
+        return ( <
+            div >
+            hello react <
+            /div>
         )
     }
 }
