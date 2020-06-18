@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SideDirectory from './directory/Directory'
+import RichEditor from './editor/RichEditor'
 import "./Home.css";
 
 class Home extends Component {
@@ -15,7 +16,7 @@ class Home extends Component {
           <SideDirectory></SideDirectory>
         </div>
         <div className="home-content">
-          neirong
+          <RichEditor />
         </div>
       </div>
     );
