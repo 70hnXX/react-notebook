@@ -80,7 +80,7 @@ class Directory extends Component {
                 <i className="iconfont iconwenjian"></i>
                 {item.name}
               </div>
-              : <div className="directories icon-padding"><i className="iconfont iconwenjian"></i>{item.name}</div>
+              : <div className={[item.isActive ? "active" : null, "directories","icon-padding"].join(' ')} onClick={this.toggleExpaned.bind(this, item)} ><i className="iconfont iconwenjian"></i>{item.name}</div>
           }
           <div className="directories" style={{ height: item.expanded ? "100%" : 0 }}>
             {item.children && item.children.length ?
@@ -146,9 +146,10 @@ class Directory extends Component {
     })  
   }
   caculatHeight(arr) {
+    // debugger
     arr.forEach(item => {
       if (item.expanded) {
-        item.height = item.children && item.children.length > 0 ? (this.findExpandNode(item.children) + 1) * 40 : 40
+        item.height = item.children && item.children.length > 0 ? (this.findExpandNode(item.children).count + 1) * 40 : 40
       } else {
         item.height = 40
       }
@@ -160,17 +161,24 @@ class Directory extends Component {
 
   }
   findExpandNode(arr) {
+    let hasExpand = false
     let count = arr.length
     arr.forEach(item => {
       if (item.expanded) {
+        hasExpand = true
         count += item.children && item.children.length ? item.children.length : 0
       } else {
         if (item.children && item.children.length > 0) {
-          count += this.findExpandNode(item.children)
+          if (this.findExpandNode(item.children).hasExpand) {
+            count += this.findExpandNode(item.children)
+          }
         }
       }
     })
-    return count
+    return {
+      count,
+      hasExpand
+    }
   }
 }
 
