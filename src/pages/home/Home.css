@@ -1,4 +1,4 @@
-.home-container{
+.home-container {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -6,15 +6,10 @@
     right: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: space-between;
 }
-.home-container section{
+
+.home-content {
     width: 100%;
-    height: 100%;
-}
-.top-level-directory{
-    background: #fff !important;
-}
-/* 二级目录展开动画 */
-.top-level-directory{
-    transition: all 0.3s ease-in-out;
 }

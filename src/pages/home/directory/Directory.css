@@ -1,0 +1,56 @@
+/* 二级目录展开动画 */
+
+.side-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+}
+
+.directories {
+    box-sizing: border-box;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    /* transition: all 1s ease-in 0; */
+    margin-bottom: 2px;
+}
+
+.active {
+    background: rgba(0, 126, 255, 0.15);
+    color: #007EFF;
+}
+
+.icon-padding {
+    margin-left: 15px;
+}
+
+.iconfont {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.top-level,
+.sub-level {
+    /* height: 100%; */
+    transition: all 0.3s ease-in-out;
+}
+
+.top-level .iconfont {
+    font-size: 16px;
+    color: #007EFF;
+}
+
+.sub-level {
+    margin-left: 20px;
+}
+
+.sub-level .iconfont {
+    font-size: 16px;
+    color: #C2CAD2;
+}
+
+
+/* #C2CAD2 */
